@@ -5,6 +5,7 @@ const cors = require('cors');
 
 // Route imports
 const authenticationRoutes = require('./routes/authenticationRoutes');
+const project_teamRoutes = require('./routes/project_teamRoutes');
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.use(`/api/v1/authentication`, authenticationRoutes);
+app.use(`/api/v1/project_team`, project_teamRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
